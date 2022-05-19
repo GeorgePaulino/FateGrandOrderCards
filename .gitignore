@@ -1,0 +1,7 @@
+.ext/**
+.vscode/**
+**/bin/**
+**/obj/**
+**/publish/**
+**.db-wal
+**.db-shm

@@ -1,0 +1,43 @@
+﻿@page "/"
+@using Microsoft.JSInterop
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+<PageTitle>FGO Cards</PageTitle>
+
+<div class="centered"><h1>Cards From Game</h1></div>
+
+<div class="row">
+@if (Cards == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{    
+    @foreach (var c in Cards)
+    {
+        <div class="column">
+            <input type="image" src=@($"img/cards/{c.Id.ToString().PadLeft(3, '0')}1.png") alt="text" style="width:100%">
+        </div>
+    }
+}
+</div>
+
+@code{
+    private Card[]? Cards;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Cards = await Http.GetFromJsonAsync<Card[]>("data/cards.json");
+    }
+    public class Card
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Class { get; set; }
+        public int ATK { get; set; }
+        public int HP { get; set; }
+        public bool Servant { get; set; }
+        public bool Gold { get; set; }
+    }
+}

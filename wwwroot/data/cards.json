@@ -1,0 +1,11 @@
+[
+    {
+      "Id" : 1,
+      "ATK" : 0, 
+      "HP" : 0,
+      "Name" : "",
+      "Class" : "",
+      "Servant" : true,
+      "Gold" : true
+    }
+]
