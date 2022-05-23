@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "FgoCardDB.dll": "sha256-iRIcF8B4Nam6C4D7ZZxgs\/JZ38dY332XzkOqd79354k=",
+      "FgoCardDB.dll": "sha256-QwLfrwTKC4aKFKSVfH07KCDZAcDvSGKBHlgKjjAtaYk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-3wB\/2t3CuQ4mfdWbx7y5UaXm4HfOYFsOMU7Aqy9TLNc=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-lLeAAdXYR99eecPiAQOdsoHhleI8Ws+b2Jh\/3KOESAE=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-qLRev3iQ8+ob2712HwRtFUJchqBHMqm+gr9bbFz7t14=",
