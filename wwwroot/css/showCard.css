@@ -1,14 +1,9 @@
-.left-div {
-    display: inline-block;
-    height: 45%;
-    align-content: center;
-}
 
-.right-div {
-    text-align: top;
-    margin-left: 30vw;
+.grid-container{
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    grid-gap: 20px;
 }
-
 #show_card{
     top:80px;
     width: 28vw;

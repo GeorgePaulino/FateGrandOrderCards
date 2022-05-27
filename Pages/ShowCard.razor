@@ -7,13 +7,29 @@
 @if (Card != null)
 {
     <PageTitle>@Card!.Name</PageTitle>
-
-    <div id="show_card">
-        <img src=@($"img/cards/{Card.Id.ToString()}/Stage 1.png") width="100%">
+    <div class="grid-container">
+        <div id="show_card">
+            <img src=@($"img/cards/{Card.Id.ToString()}/Stage 1.png") width="100%">
+        </div>
+        <div class="right-div">
+            <div>ID: @Card.Id</div>
+            <div>Star: @Card.Star</div>
+            <div>Name: @Card.Name <span>Class: @Card.Class</span></div>
+            <div></div>
+            <div>Japanese Name: @Card.Japanese</div>
+            <div>AKA: @Card.AKA</div>
+            <div>Gender: @Card.Gender</div>
+            <div>Alignments: @Card.Alignments</div>
+            <div>Cost: @Card.Cost</div>
+            <div>HP: @Card.HP</div>
+            <div>Grail HP LV 100: @Card.GrailHPLV100</div>
+            <div>Grail HP LV 120: @Card.GrailHPLV120</div>
+            <div>ATK: @Card.ATK</div>
+            <div>Grail ATK LV 100: @Card.GrailATKLV100</div>
+            <div>Grail ATK LV 120: @Card.GrailATKLV120</div>
+            <div>Attribute: @Card.Attribute</div>
+            <div>Growth Curve: @Card.Growth</div>
+            <div>Traits: @Card.Traits</div>
+        </div>   
     </div>
-    <div class="right-div">
-        <div>Name: @Card.Name</div>
-        <div>ATK: @Card.ATK</div>
-        <div>HP: @Card.HP</div>
-    </div>   
 }
