@@ -1,0 +1,19 @@
+@page "/card"
+@page "/card/{id:int}"
+@using Microsoft.JSInterop
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+@if (Card != null)
+{
+    <PageTitle>@Card!.Name</PageTitle>
+
+    <div id="show_card">
+        <img src=@($"img/cards/{Card.Id.ToString()}/Stage 1.png") width="100%">
+    </div>
+    <div class="right-div">
+        <div>Name: @Card.Name</div>
+        <div>ATK: @Card.ATK</div>
+        <div>HP: @Card.HP</div>
+    </div>   
+}

@@ -1,0 +1,16 @@
+.left-div {
+    display: inline-block;
+    height: 45%;
+    align-content: center;
+}
+
+.right-div {
+    text-align: top;
+    margin-left: 30vw;
+}
+
+#show_card{
+    top:80px;
+    width: 28vw;
+    height: 40vh;
+}

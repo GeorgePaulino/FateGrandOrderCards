@@ -4,25 +4,42 @@
 @inject IJSRuntime JS
 
 <PageTitle>FGO Cards</PageTitle>
-<div class="centered"><h1>Cards From Game</h1></div>
-<input type="text" placeholder="Search..." @bind="@searchInputValue" @oninput="OnSearchInputEvent" />
-<input type="text" placeholder=@pages @bind="@searchInputValue" @oninput="OnSearchInputEvent" />
+<div class="top">
+	<div class="centered"><h1>Cards From Game</h1></div>
+	<input type="text" placeholder="Search..." @bind="@searchInputValue" @oninput="OnSearchInputEvent" />
+	@if (lastPage != 0)
+	{
+		@for(int i = 0; i < lastPage; i++)
+		{
+			int j = i;
+			<input type="checkbox" id=@($"radio-{j}") class="radio" @onclick="@(e => OnPageChanged(j))" />
+			<label for=@($"radio-{j}")>@($"{j * imagesByPage + 1} / {(j+1) * imagesByPage}")</label>
+		}
+	}
+</div>
 <div class="row">
-@if (Cards == null)
+@if (Cards != null)
 {
-	<p><em>Loading...</em></p>
-}
-else
-{    
+	@if(Cards.Length == 0)
+	{
+		<h2 class="centered bottom">Without Results</h2>
+	}
 	@foreach (var c in Cards)
 	{
 		<div class="column">
-			<input type="image" @onclick="OnClick" src=@($"img/cards/{c.Id.ToString()}/Stage 1.png") alt=@("c.Name") style="width:100%">
+			<input class="card" type="image" onclick="access('./card/' + @c.Id)" src=@($"img/cards/{c.Id.ToString()}/Stage 1.png") alt=@("c.Name") style="width:100%">
 		</div>
 	}
 }
 </div>
-
-@code{
-	
-}
+<div class="centered bottom">
+	@if (lastPage != 0)
+	{
+		@for(int i = 0; i < lastPage; i++)
+		{
+			int j = i;
+			<input type="checkbox" id=@($"radio-{j}") class="radio" @onclick="@(e => OnPageChanged(j))" />
+			<label for=@($"radio-{j}")>@($"{j * imagesByPage + 1} / {(j+1) * imagesByPage}")</label>
+		}
+	}
+</div>
