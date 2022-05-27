@@ -1,4 +1,11 @@
-/* Three image containers (use 25% for four, and 50% for two, etc) */
+.top{
+    margin-bottom: 15px;
+}
+
+.centered {
+    text-align: center;
+}
+
 .column {
     float: left;
     width: 20%;
@@ -12,21 +19,43 @@
     display: table;
 }
 
-.centered{
-    text-align: center;
+input[type="checkbox"] {
+    display: none;
 }
 
-.left-div{
+input[type="checkbox"] + label {
+    margin-left: 10px;
+    text-align: center;
+    background: #dedede;
+    color: black;
+    height: 20px;
+    width: 60px;
+    margin-top: 7px;
+    margin-bottom: 7px;
     display: inline-block;
-    height: 45%;
-    align-content: center;
 }
-.right-div{
-    font-family: FGO;
-    font-size: x-large;
+
+input[type="checkbox"]:checked+label {
+    text-align: center;
+    background: green;
+    color: white;
+    height: 20px;
+    width: 100px;
+    margin-top: 7px;
+    margin-bottom: 7px;
     display: inline-block;
-    vertical-align: top;
-    text-align: left;
+}
+
+.card{
+    border-radius: 25px;
+}
+.card:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.bottom {
+    margin-top: 20px;
 }
 
 @media (max-width: 600px) {
@@ -35,8 +64,8 @@
         width: 33.3%;
         padding: 5px;
     }
-    
-    .right-div{
+
+    .right-div {
         font-family: FGO;
         font-size: xx-large;
         float: top;
