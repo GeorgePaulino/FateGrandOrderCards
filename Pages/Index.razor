@@ -27,7 +27,7 @@
 	@foreach (var c in Cards)
 	{
 		<div class="column">
-			<input class="card" type="image" onclick="access('./card/' + @c.Id)" src=@($"img/cards/{c.Id.ToString()}/Stage 1.png") alt=@("c.Name") style="width:100%">
+			<input class="card" type="image" onclick="access('card/' + @c.Id)" src=@($"img/cards/{c.Id.ToString()}/Stage 1.png") alt=@("c.Name") style="width:100%">
 		</div>
 	}
 }
