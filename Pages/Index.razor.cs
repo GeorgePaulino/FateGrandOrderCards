@@ -9,7 +9,7 @@ namespace FgoCardDB.Pages
     public partial class Index
     {
 
-        private int imagesByPage = 30;
+        private int imagesByPage = 20;
 
         private string? searchInputValue { get; set; }
         private List<Card>? AllCards { get; set; }
